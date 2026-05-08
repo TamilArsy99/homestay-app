@@ -1,0 +1,125 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+}
+
+header {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+section {
+  padding: 1em;
+}
+
+button, input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+button {
+  background: #3498db;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+select {
+  background: #fff;
+  color: #333;
+}
+
+.card {
+  background: white;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Bottom Navigation Bar */
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #2c3e50;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5em;
+}
+
+nav button {
+  flex: 1;
+  margin: 0 4px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.9em;
+}
+
+nav button:hover {
+  background: #2980b9;
+}
+
+/* Highlight active nav button */
+nav button.active {
+  background: #1abc9c; /* teal highlight */
+  font-weight: bold;
+}
+
+/* Favorites / Saved Filters buttons */
+button.save {
+  background: #f39c12; /* orange for save */
+}
+
+button.apply {
+  background: #27ae60; /* green for apply */
+}
+
+/* Results Counter Badge */
+#resultsCounter {
+  margin: 10px 0;
+  padding: 8px 12px;
+  background: #1abc9c; /* teal badge */
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* No Results Message Badge */
+#noResultsMsg {
+  margin: 10px 0;
+  padding: 8px 12px;
+  background: #e74c3c; /* red badge */
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 6px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

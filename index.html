@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homestay Booking App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Homestay Booking</h1>
+</header>
+
+<main id="app">
+  <!-- Home -->
+  <section id="home">
+    <h2>Find Your Stay</h2>
+    <input type="text" id="searchBox" placeholder="Search homestays...">
+    <button onclick="goTo('results')">Search</button>
+  </section>
+
+  <!-- Results -->
+  <section id="results" class="hidden">
+    <h2>Results</h2>
+
+    <!-- Filter Inputs -->
+    <label>Price:
+      <select id="filterPrice">
+        <option value="">-- Select Price --</option>
+        <option value="Under $100">Under $100</option>
+        <option value="Under $150">Under $150</option>
+        <option value="Under $200">Under $200</option>
+      </select>
+    </label>
+
+    <label>Location:
+      <select id="filterLocation">
+        <option value="">-- Select Location --</option>
+        <option value="Kuala Lumpur">Kuala Lumpur</option>
+        <option value="Penang">Penang</option>
+        <option value="Langkawi">Langkawi</option>
+      </select>
+    </label>
+
+    <label>Rating:
+      <select id="filterRating">
+        <option value="">-- Select Rating --</option>
+        <option value="3+ stars">3+ stars</option>
+        <option value="4+ stars">4+ stars</option>
+        <option value="5 stars">5 stars</option>
+      </select>
+    </label>
+
+    <!-- Save / Apply / Clear / Show All -->
+    <button class="save" onclick="saveFilters()">⭐ Save Current Filters</button>
+    <button class="apply" onclick="applyFilters()">📌 Apply Saved Filters</button>
+    <button onclick="clearFilters()">🧹 Clear Filters</button>
+    <button onclick="showAllResults()">🔄 Show All</button>
+
+    <!-- Manual Search Button inside Results -->
+    <button onclick="filterResults({
+      price: document.getElementById('filterPrice').value,
+      location: document.getElementById('filterLocation').value,
+      rating: document.getElementById('filterRating').value,
+      keyword: document.getElementById('searchBox').value.trim().toLowerCase()
+    })">🔍 Search</button>
+
+    <div id="loadingMsg">Loading...</div>
+
+    <!-- Results Counter -->
+    <div id="resultsCounter"></div>
+
+    <div id="resultsList" class="hidden">
+      <div class="card">
+        <h3>Cozy Homestay</h3>
+        <p>$120/night • Kuala Lumpur</p>
+        <button onclick="goTo('details')">View Details</button>
+        <button onclick="addToFavorites('Cozy Homestay – $120/night • Kuala Lumpur')">❤️ Add to Favorites</button>
+      </div>
+      <div class="card">
+        <h3>Beachside Villa</h3>
+        <p>$180/night • Penang</p>
+        <button onclick="goTo('details')">View Details</button>
+        <button onclick="addToFavorites('Beachside Villa – $180/night • Penang')">❤️ Add to Favorites</button>
+      </div>
+      <div class="card">
+        <h3>Luxury Resort</h3>
+        <p>$250/night • Langkawi</p>
+        <button onclick="goTo('details')">View Details</button>
+        <button onclick="addToFavorites('Luxury Resort – $250/night • Langkawi')">❤️ Add to Favorites</button>
+      </div>
+    </div>
+
+    <!-- No Results Message -->
+    <div id="noResultsMsg" class="hidden">
+      <p>❌ No results found. Try adjusting your filters or search keyword.</p>
+    </div>
+
+    <button onclick="goTo('home')">Back</button>
+  </section>
+
+  <!-- Homestay Details -->
+  <section id="details" class="hidden">
+    <h2>Cozy Homestay</h2>
+    <p>Near city center, WiFi, breakfast included.</p>
+    <button onclick="goTo('booking')">Book Now</button>
+    <button onclick="goTo('results')">Back</button>
+  </section>
+
+  <!-- Booking -->
+  <section id="booking" class="hidden">
+    <h2>Booking</h2>
+    <form onsubmit="validateBooking(event)">
+      <label>Check-in Date:<br><input type="date" id="checkin"></label><br>
+      <label>Guests:<br><input type="number" id="guests" min="1"></label><br>
+      <button type="submit">Proceed to Payment</button>
+    </form>
+    <button onclick="goTo('details')">Cancel</button>
+  </section>
+
+  <!-- Payment -->
+  <section id="payment" class="hidden">
+    <h2>Payment</h2>
+    <input type="text" placeholder="Card Number">
+    <input type="text" placeholder="Expiry Date">
+    <input type="text" placeholder="CVV">
+    <button onclick="goTo('success')">Pay</button>
+    <button onclick="goTo('error')">Simulate Error</button>
+    <button onclick="goTo('booking')">Back</button>
+  </section>
+
+  <!-- Success -->
+  <section id="success" class="hidden">
+    <h2>✅ Booking Successful</h2>
+    <button onclick="goTo('confirmation')">View Confirmation</button>
+  </section>
+
+  <!-- Error -->
+  <section id="error" class="hidden">
+    <h2>❌ Payment Failed</h2>
+    <p>Please retry.</p>
+    <button onclick="goTo('payment')">Retry</button>
+  </section>
+
+  <!-- Confirmation -->
+  <section id="confirmation" class="hidden">
+    <h2>Booking Confirmation</h2>
+    <p>Your booking is confirmed.</p>
+    <button onclick="goTo('myBookings')">Go to My Bookings</button>
+  </section>
+
+  <!-- My Bookings -->
+  <section id="myBookings" class="hidden">
+    <h2>My Bookings</h2>
+    <div class="card">Cozy Homestay – May 2026</div>
+    <button onclick="goTo('home')">Home</button>
+  </section>
+
+  <!-- Favorites -->
+  <section id="favorites" class="hidden">
+    <h2>My Favorites</h2>
+    <div id="favoritesList"></div>
+    <button onclick="goTo('home')">Home</button>
+  </section>
+</main>
+
+<!-- Bottom Navigation Bar -->
+<nav>
+  <button onclick="goTo('home')">🏠 Home</button>
+  <button onclick="goTo('myBookings')">📖 My Bookings</button>
+  <button onclick="goTo('favorites')">❤️ Favorites</button>
+</nav>
+
+<script src="script.js"></script>
+</body>
+</html>
