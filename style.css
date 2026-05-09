@@ -111,7 +111,7 @@ nav {
   background: #2c3e50;
   display: flex;
   justify-content: space-around;
-  padding: 0.5em;
+  padding: 0.4em;
   border-top: 1px solid #ccc;
 }
 
@@ -122,14 +122,15 @@ nav button {
   color: white;
   border: none;
   border-radius: 0;
-  padding: 8px 0; /* ✅ smaller height */
-  font-size: 0.8em; /* ✅ smaller labels */
+  padding: 8px 0;
+  font-size: 1.4em; /* ✅ larger icons */
+  line-height: 1;   /* ✅ tighter spacing */
 }
 
 nav button.active {
-  color: #1abc9c;
-  font-weight: bold;
+  color: #1abc9c; /* ✅ teal highlight for active icon */
 }
+
 
 /* Favorites / Saved Filters buttons */
 button.save {
