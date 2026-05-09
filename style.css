@@ -83,24 +83,29 @@ select {
   align-items: center;
   justify-content: flex-start; /* ✅ arrow + title aligned left */
   padding: 0.5em 1em;
+  background: #f9f9f9; /* optional: match section background */
 }
+
 .backBtn {
   background: none;
   border: none;
   font-size: 1.2em;
   cursor: pointer;
   color: #2c3e50;
-  margin-right: 8px; /* ✅ spacing between arrow and title */
+  margin-right: 10px; /* ✅ spacing between arrow and title */
+  flex-shrink: 0;     /* ✅ arrow never shrinks */
 }
 .backBtn:active {
   color: #3498db;
 }
+
 .section-header h2 {
   margin: 0;
   font-size: 1.1em;
-  flex: 1;
-  text-align: left; /* ✅ keep title left-aligned */
+  text-align: left;   /* ✅ keep title left-aligned */
+  flex: 1;            /* ✅ title takes remaining space */
 }
+
 
 /* Bottom Navigation Bar */
 nav {
