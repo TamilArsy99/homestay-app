@@ -19,7 +19,7 @@ section {
 /* Inputs & Buttons */
 button, input, select {
   width: 100%;
-  padding: 12px; /* ✅ smaller but still tap-friendly */
+  padding: 12px;
   margin: 8px 0;
   border-radius: 10px;
   border: 1px solid #ccc;
@@ -77,22 +77,29 @@ select {
   opacity: 0.6;
 }
 
-/* Back arrow button */
+/* Section header with back arrow */
 .section-header {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* ✅ arrow + title aligned left */
+  padding: 0.5em 1em;
 }
 .backBtn {
-  position: absolute;
-  top: 8px;
-  left: 8px; /* ✅ always top-left */
   background: none;
   border: none;
   font-size: 1.2em;
   cursor: pointer;
   color: #2c3e50;
+  margin-right: 8px; /* ✅ spacing between arrow and title */
 }
 .backBtn:active {
   color: #3498db;
+}
+.section-header h2 {
+  margin: 0;
+  font-size: 1.1em;
+  flex: 1;
+  text-align: left; /* ✅ keep title left-aligned */
 }
 
 /* Bottom Navigation Bar */
@@ -115,7 +122,7 @@ nav button {
   color: white;
   border: none;
   border-radius: 0;
-  padding: 10px 0;
+  padding: 8px 0; /* ✅ smaller height */
   font-size: 0.8em; /* ✅ smaller labels */
 }
 
