@@ -2,24 +2,26 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   background: #f9f9f9;
+  font-size: 16px; /* ✅ readable on mobile */
 }
 
 header {
   background: #2c3e50;
   color: white;
   text-align: center;
-  padding: 1em;
+  padding: 0.8em; /* ✅ slimmer header */
 }
 
 section {
   padding: 1em;
 }
 
+/* Inputs & Buttons */
 button, input, select {
   width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 6px;
+  padding: 14px; /* ✅ larger tap area */
+  margin: 10px 0;
+  border-radius: 10px; /* ✅ rounded corners */
   border: 1px solid #ccc;
   font-size: 1em;
 }
@@ -28,6 +30,7 @@ button {
   background: #3498db;
   color: white;
   border: none;
+  transition: background 0.2s ease;
 }
 
 button:hover {
@@ -37,21 +40,23 @@ button:hover {
 select {
   background: #fff;
   color: #333;
+  border-radius: 10px;
 }
 
+/* Cards */
 .card {
   background: white;
-  padding: 1em;
+  padding: 1.2em;
   margin: 1em 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 12px; /* ✅ more rounded */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  background: #fdfdfd;
+.card:active {
+  transform: scale(0.98); /* ✅ tap feedback */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
 }
 
 .hidden {
@@ -60,29 +65,30 @@ select {
 
 /* Icons inside cards */
 .icons {
-  margin-top: 8px;
+  margin-top: 10px;
+  display: flex;
+  gap: 16px; /* ✅ spaced for thumbs */
 }
 .icons span {
-  margin-right: 10px;
   cursor: pointer;
-  font-size: 1.2em;
+  font-size: 1.4em; /* ✅ larger icons */
 }
-.icons span:hover {
-  opacity: 0.7;
+.icons span:active {
+  opacity: 0.6;
 }
 
 /* Back arrow button */
 .backBtn {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 12px;
+  left: 12px;
   background: none;
   border: none;
-  font-size: 1.2em;
+  font-size: 1.4em; /* ✅ bigger tap target */
   cursor: pointer;
   color: #2c3e50;
 }
-.backBtn:hover {
+.backBtn:active {
   color: #3498db;
 }
 
@@ -95,78 +101,74 @@ nav {
   background: #2c3e50;
   display: flex;
   justify-content: space-around;
-  padding: 0.5em;
+  padding: 0.6em;
+  border-top: 1px solid #ccc;
 }
 
 nav button {
   flex: 1;
   margin: 0 4px;
-  background: #3498db;
+  background: none; /* ✅ cleaner mobile look */
   color: white;
   border: none;
-  border-radius: 6px;
-  padding: 10px;
+  border-radius: 0;
+  padding: 12px 0;
   font-size: 0.9em;
 }
 
-nav button:hover {
-  background: #2980b9;
-}
-
-/* Highlight active nav button */
 nav button.active {
-  background: #1abc9c; /* teal highlight */
+  color: #1abc9c; /* ✅ teal highlight */
   font-weight: bold;
 }
 
 /* Favorites / Saved Filters buttons */
 button.save {
-  background: #f39c12; /* orange for save */
+  background: #f39c12;
 }
 
 button.apply {
-  background: #27ae60; /* green for apply */
+  background: #27ae60;
 }
 
-/* Search Button (Home page) */
+/* Explore Button (Home page) */
 .searchBtn {
   background-color: #4CAF50;
   color: white;
-  padding: 12px 20px;
+  padding: 14px 28px;
   border: none;
-  border-radius: 6px;
+  border-radius: 50px; /* ✅ pill shape */
   cursor: pointer;
   font-size: 1em;
   width: auto;
   display: block;
-  margin: 16px auto;
+  margin: 20px auto;
 }
-.searchBtn:hover {
+.searchBtn:active {
   background-color: #45a049;
 }
 
 /* Results Counter Badge */
 #resultsCounter {
-  margin: 10px 0;
-  padding: 8px 12px;
+  margin: 12px 0;
+  padding: 10px 14px;
   background: #1abc9c;
   color: white;
   font-weight: bold;
   text-align: center;
-  border-radius: 6px;
+  border-radius: 20px; /* ✅ pill badge */
   display: inline-block;
   animation: fadeIn 0.5s ease-in-out;
 }
 
 /* No Results Message Badge */
 #noResultsMsg {
-  margin: 10px 0;
-  padding: 8px 12px;
+  margin: 12px 0;
+  padding: 10px 14px;
   background: #e74c3c;
   color: white;
   font-weight: bold;
   text-align: center;
-  border-radius: 6px;
+  border-radius: 20px;
   animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -174,43 +176,28 @@ button.apply {
 .toast {
   visibility: hidden;
   min-width: 250px;
-  margin-left: -125px;
   background: #333;
   color: #fff;
   text-align: center;
-  border-radius: 6px;
-  padding: 12px;
+  border-radius: 10px;
+  padding: 14px;
   position: fixed;
   z-index: 9999;
   left: 50%;
-  bottom: 30px;
-  font-size: 0.9em;
+  bottom: 40px;
+  font-size: 1em;
 }
 .toast.show {
   visibility: visible;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
-@keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
-@keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
-
-/* Detail Sections */
-section[id^="details-"] h2 {
-  margin-top: 0;
-  color: #2c3e50;
-}
-section[id^="details-"] p {
-  margin: 6px 0;
-}
-section[id^="details-"] img {
-  width: 100%;
-  border-radius: 8px;
-  margin: 10px 0;
-}
+@keyframes fadein { from {bottom: 20px; opacity: 0;} to {bottom: 40px; opacity: 1;} }
+@keyframes fadeout { from {bottom: 40px; opacity: 1;} to {bottom: 20px; opacity: 0;} }
 
 /* Payment Page Errors & Success */
 .error {
   color: red;
-  font-size: 0.85em;
+  font-size: 0.9em;
   margin-top: 4px;
   display: block;
 }
@@ -222,23 +209,23 @@ section[id^="details-"] img {
 #paymentSuccess {
   background: #eafbea;
   border: 1px solid #27ae60;
-  padding: 10px;
-  border-radius: 6px;
+  padding: 12px;
+  border-radius: 10px;
   color: #27ae60;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 12px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
-/* Loading Spinner for Success */
+/* Loading Spinner */
 .spinner {
   border: 3px solid #f3f3f3;
   border-top: 3px solid #27ae60;
   border-radius: 50%;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   animation: spin 1s linear infinite;
 }
 @keyframes spin {
@@ -251,3 +238,4 @@ section[id^="details-"] img {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
+
