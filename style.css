@@ -77,37 +77,35 @@ select {
   opacity: 0.6;
 }
 
-/* Section header with back arrow */
-.section-header {
+/* Back arrow row (separate above sub-header) */
+.detail-nav {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* ✅ arrow + title aligned left */
+  justify-content: flex-start;
   padding: 0.5em 1em;
-  background: #f9f9f9; /* optional: match section background */
 }
-
 .backBtn {
   background: none;
   border: none;
-  font-size: 1.2em;
+  font-size: 1.4em; /* ✅ larger for mobile */
   cursor: pointer;
   color: #2c3e50;
-  margin-right: 10px; /* ✅ spacing between arrow and title */
-  flex-shrink: 0;     /* ✅ arrow never shrinks */
 }
 .backBtn:active {
   color: #3498db;
 }
 
+/* Sub-header row (title centered) */
+.section-header {
+  text-align: center;
+  padding: 0.5em 1em;
+}
 .section-header h2 {
   margin: 0;
   font-size: 1.1em;
-  text-align: left;   /* ✅ keep title left-aligned */
-  flex: 1;            /* ✅ title takes remaining space */
 }
 
-
-/* Bottom Navigation Bar */
+/* Bottom Navigation Bar (icons only) */
 nav {
   position: fixed;
   bottom: 0;
@@ -129,13 +127,12 @@ nav button {
   border-radius: 0;
   padding: 8px 0;
   font-size: 1.4em; /* ✅ larger icons */
-  line-height: 1;   /* ✅ tighter spacing */
+  line-height: 1;
 }
 
 nav button.active {
   color: #1abc9c; /* ✅ teal highlight for active icon */
 }
-
 
 /* Favorites / Saved Filters buttons */
 button.save {
