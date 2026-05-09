@@ -2,14 +2,14 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   background: #f9f9f9;
-  font-size: 16px; /* ✅ readable on mobile */
+  font-size: 15px; /* ✅ slightly smaller for mobile */
 }
 
 header {
   background: #2c3e50;
   color: white;
   text-align: center;
-  padding: 0.8em; /* ✅ slimmer header */
+  padding: 0.7em; /* ✅ slimmer header */
 }
 
 section {
@@ -19,11 +19,11 @@ section {
 /* Inputs & Buttons */
 button, input, select {
   width: 100%;
-  padding: 14px; /* ✅ larger tap area */
-  margin: 10px 0;
-  border-radius: 10px; /* ✅ rounded corners */
+  padding: 12px; /* ✅ smaller but still tap-friendly */
+  margin: 8px 0;
+  border-radius: 10px;
   border: 1px solid #ccc;
-  font-size: 1em;
+  font-size: 0.95em;
 }
 
 button {
@@ -46,16 +46,16 @@ select {
 /* Cards */
 .card {
   background: white;
-  padding: 1.2em;
-  margin: 1em 0;
-  border-radius: 12px; /* ✅ more rounded */
+  padding: 1em;
+  margin: 0.8em 0;
+  border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:active {
-  transform: scale(0.98); /* ✅ tap feedback */
+  transform: scale(0.98);
   box-shadow: 0 1px 4px rgba(0,0,0,0.15);
 }
 
@@ -65,26 +65,29 @@ select {
 
 /* Icons inside cards */
 .icons {
-  margin-top: 10px;
+  margin-top: 8px;
   display: flex;
-  gap: 16px; /* ✅ spaced for thumbs */
+  gap: 14px;
 }
 .icons span {
   cursor: pointer;
-  font-size: 1.4em; /* ✅ larger icons */
+  font-size: 1.3em;
 }
 .icons span:active {
   opacity: 0.6;
 }
 
 /* Back arrow button */
+.section-header {
+  position: relative;
+}
 .backBtn {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 8px;
+  left: 8px; /* ✅ always top-left */
   background: none;
   border: none;
-  font-size: 1.4em; /* ✅ bigger tap target */
+  font-size: 1.2em;
   cursor: pointer;
   color: #2c3e50;
 }
@@ -101,23 +104,23 @@ nav {
   background: #2c3e50;
   display: flex;
   justify-content: space-around;
-  padding: 0.6em;
+  padding: 0.5em;
   border-top: 1px solid #ccc;
 }
 
 nav button {
   flex: 1;
-  margin: 0 4px;
-  background: none; /* ✅ cleaner mobile look */
+  margin: 0 2px;
+  background: none;
   color: white;
   border: none;
   border-radius: 0;
-  padding: 12px 0;
-  font-size: 0.9em;
+  padding: 10px 0;
+  font-size: 0.8em; /* ✅ smaller labels */
 }
 
 nav button.active {
-  color: #1abc9c; /* ✅ teal highlight */
+  color: #1abc9c;
   font-weight: bold;
 }
 
@@ -134,14 +137,14 @@ button.apply {
 .searchBtn {
   background-color: #4CAF50;
   color: white;
-  padding: 14px 28px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 50px; /* ✅ pill shape */
+  border-radius: 50px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 0.95em;
   width: auto;
   display: block;
-  margin: 20px auto;
+  margin: 16px auto;
 }
 .searchBtn:active {
   background-color: #45a049;
@@ -149,21 +152,21 @@ button.apply {
 
 /* Results Counter Badge */
 #resultsCounter {
-  margin: 12px 0;
-  padding: 10px 14px;
+  margin: 10px 0;
+  padding: 8px 12px;
   background: #1abc9c;
   color: white;
   font-weight: bold;
   text-align: center;
-  border-radius: 20px; /* ✅ pill badge */
+  border-radius: 20px;
   display: inline-block;
   animation: fadeIn 0.5s ease-in-out;
 }
 
 /* No Results Message Badge */
 #noResultsMsg {
-  margin: 12px 0;
-  padding: 10px 14px;
+  margin: 10px 0;
+  padding: 8px 12px;
   background: #e74c3c;
   color: white;
   font-weight: bold;
@@ -175,48 +178,48 @@ button.apply {
 /* Toast Notification */
 .toast {
   visibility: hidden;
-  min-width: 250px;
+  min-width: 220px;
   background: #333;
   color: #fff;
   text-align: center;
   border-radius: 10px;
-  padding: 14px;
+  padding: 12px;
   position: fixed;
   z-index: 9999;
   left: 50%;
-  bottom: 40px;
-  font-size: 1em;
+  bottom: 36px;
+  font-size: 0.9em;
 }
 .toast.show {
   visibility: visible;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
-@keyframes fadein { from {bottom: 20px; opacity: 0;} to {bottom: 40px; opacity: 1;} }
-@keyframes fadeout { from {bottom: 40px; opacity: 1;} to {bottom: 20px; opacity: 0;} }
+@keyframes fadein { from {bottom: 20px; opacity: 0;} to {bottom: 36px; opacity: 1;} }
+@keyframes fadeout { from {bottom: 36px; opacity: 1;} to {bottom: 20px; opacity: 0;} }
 
 /* Payment Page Errors & Success */
 .error {
   color: red;
-  font-size: 0.9em;
+  font-size: 0.85em;
   margin-top: 4px;
   display: block;
 }
 #paymentError {
   color: red;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 #paymentSuccess {
   background: #eafbea;
   border: 1px solid #27ae60;
-  padding: 12px;
+  padding: 10px;
   border-radius: 10px;
   color: #27ae60;
   font-weight: bold;
-  margin-top: 12px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 /* Loading Spinner */
@@ -224,8 +227,8 @@ button.apply {
   border: 3px solid #f3f3f3;
   border-top: 3px solid #27ae60;
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   animation: spin 1s linear infinite;
 }
 @keyframes spin {
@@ -233,9 +236,18 @@ button.apply {
   100% { transform: rotate(360deg);}
 }
 
+/* Detail Sections spacing */
+section[id^="details-"] {
+  padding-bottom: 80px; /* ✅ ensures Reserve button visible above nav */
+}
+section[id^="details-"] button {
+  margin-top: 12px;
+  width: 100%;
+  border-radius: 10px;
+}
+
 /* Fade-in animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
-
