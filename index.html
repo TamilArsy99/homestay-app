@@ -1,4 +1,3 @@
-<!-- trigger GitHub Pages build -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,33 +13,176 @@
 </header>
 
 <main id="app">
-  <!-- Home -->
-  <section id="home">
-    <h2>Find Your Stay</h2>
-    <input type="text" id="searchBox" placeholder="Search homestays...">
-    <button onclick="goTo('results')">Search</button>
-  </section>
+<!-- Home Section -->
+<section id="home">
+  <h2>Discover Your Stay</h2>
+
+  <!-- Explore Button -->
+  <div class="search-actions">
+    <button onclick="goTo('results')" class="searchBtn">🔍 Explore</button>
+  </div>
+
+  <!-- Homestay Cards -->
+
+  <div class="card" 
+       data-location="Kuala Lumpur" 
+       data-price="240" 
+       data-rating="5.0"
+       onclick="goTo('details-flat')">
+    <h3>Flat in Kuala Lumpur</h3>
+    <p>RM240 for 2 nights ★ 5.0</p>
+    <div class="icons">
+      <span onclick="event.stopPropagation(); addToFavorites('Flat in Kuala Lumpur – RM240 for 2 nights ★ 5.0')">❤️</span>
+      <span onclick="event.stopPropagation(); goTo('details-flat')">👁</span>
+    </div>
+  </div>
+
+  <div class="card" 
+       data-location="Kuala Lumpur" 
+       data-price="480" 
+       data-rating="4.9"
+       onclick="goTo('details-klcc')">
+    <h3>KLCC Luxury Pool View</h3>
+    <p>RM480 for 2 nights ★ 4.9</p>
+    <div class="icons">
+      <span onclick="event.stopPropagation(); addToFavorites('KLCC Luxury Pool View – RM480 for 2 nights ★ 4.9')">❤️</span>
+      <span onclick="event.stopPropagation(); goTo('details-klcc')">👁</span>
+    </div>
+  </div>
+
+  <div class="card" 
+       data-location="Johor Bahru" 
+       data-price="350" 
+       data-rating="4.2"
+       onclick="goTo('details-jb')">
+    <h3>Johor Bahru Seaside Villa</h3>
+    <p>RM350 for 2 nights ★ 4.2</p>
+    <div class="icons">
+      <span onclick="event.stopPropagation(); addToFavorites('Johor Bahru Seaside Villa – RM350 for 2 nights ★ 4.2')">❤️</span>
+      <span onclick="event.stopPropagation(); goTo('details-jb')">👁</span>
+    </div>
+  </div>
+
+  <div class="card" 
+       data-location="Penang" 
+       data-price="180" 
+       data-rating="3.8"
+       onclick="goTo('details-penang')">
+    <h3>Penang Heritage Stay</h3>
+    <p>RM180 for 2 nights ★ 3.8</p>
+    <div class="icons">
+      <span onclick="event.stopPropagation(); addToFavorites('Penang Heritage Stay – RM180 for 2 nights ★ 3.8')">❤️</span>
+      <span onclick="event.stopPropagation(); goTo('details-penang')">👁</span>
+    </div>
+  </div>
+
+  <div class="card" 
+       data-location="Langkawi" 
+       data-price="600" 
+       data-rating="4.7"
+       onclick="goTo('details-langkawi')">
+    <h3>Langkawi Beach Resort</h3>
+    <p>RM600 for 2 nights ★ 4.7</p>
+    <div class="icons">
+      <span onclick="event.stopPropagation(); addToFavorites('Langkawi Beach Resort – RM600 for 2 nights ★ 4.7')">❤️</span>
+      <span onclick="event.stopPropagation(); goTo('details-langkawi')">👁</span>
+    </div>
+  </div>
+
+  <div class="card" 
+       data-location="Petaling Jaya" 
+       data-price="220" 
+       data-rating="4.0"
+       onclick="goTo('details-pj')">
+    <h3>Petaling Jaya Modern Apartment</h3>
+    <p>RM220 for 2 nights ★ 4.0</p>
+    <div class="icons">
+      <span onclick="event.stopPropagation(); addToFavorites('Petaling Jaya Modern Apartment – RM220 for 2 nights ★ 4.0')">❤️</span>
+      <span onclick="event.stopPropagation(); goTo('details-pj')">👁</span>
+    </div>
+  </div>
+
+  <div class="card" 
+       data-location="Kuala Lumpur" 
+       data-price="150" 
+       data-rating="3.5"
+       onclick="goTo('details-klbudget')">
+    <h3>Kuala Lumpur Budget Stay</h3>
+    <p>RM150 for 2 nights ★ 3.5</p>
+    <div class="icons">
+      <span onclick="event.stopPropagation(); addToFavorites('Kuala Lumpur Budget Stay – RM150 for 2 nights ★ 3.5')">❤️</span>
+      <span onclick="event.stopPropagation(); goTo('details-klbudget')">👁</span>
+    </div>
+  </div>
+
+  <div class="card" 
+       data-location="Johor Bahru" 
+       data-price="800" 
+       data-rating="5.0"
+       onclick="goTo('details-jblux')">
+    <h3>Johor Bahru Luxury Villa</h3>
+    <p>RM800 for 2 nights ★ 5.0</p>
+    <div class="icons">
+      <span onclick="event.stopPropagation(); addToFavorites('Johor Bahru Luxury Villa – RM800 for 2 nights ★ 5.0')">❤️</span>
+      <span onclick="event.stopPropagation(); goTo('details-jblux')">👁</span>
+    </div>
+  </div>
+
+  <div class="card" 
+       data-location="Penang" 
+       data-price="420" 
+       data-rating="4.4"
+       onclick="goTo('details-penanglux')">
+    <h3>Penang Seaview Condo</h3>
+    <p>RM420 for 2 nights ★ 4.4</p>
+    <div class="icons">
+      <span onclick="event.stopPropagation(); addToFavorites('Penang Seaview Condo – RM420 for 2 nights ★ 4.4')">❤️</span>
+      <span onclick="event.stopPropagation(); goTo('details-penanglux')">👁</span>
+    </div>
+  </div>
+
+  <div class="card" 
+       data-location="Langkawi" 
+       data-price="300" 
+       data-rating="3.9"
+       onclick="goTo('details-langkawivilla')">
+    <h3>Langkawi Garden Villa</h3>
+    <p>RM300 for 2 nights ★ 3.9</p>
+    <div class="icons">
+      <span onclick="event.stopPropagation(); addToFavorites('Langkawi Garden Villa – RM300 for 2 nights ★ 3.9')">❤️</span>
+      <span onclick="event.stopPropagation(); goTo('details-langkawivilla')">👁</span>
+    </div>
+  </div>
+
+</section>
 
   <!-- Results -->
   <section id="results" class="hidden">
-    <h2>Results</h2>
+    <header class="section-header">
+      <button class="backBtn" onclick="goBack()">⬅</button>
+      <h2>Search Results</h2>
+    </header>
 
-    <!-- Filter Inputs -->
-    <label>Price:
-      <select id="filterPrice">
-        <option value="">-- Select Price --</option>
-        <option value="Under $100">Under $100</option>
-        <option value="Under $150">Under $150</option>
-        <option value="Under $200">Under $200</option>
-      </select>
-    </label>
-
+    <!-- Filters -->
+    <h3>Filters</h3>
     <label>Location:
       <select id="filterLocation">
         <option value="">-- Select Location --</option>
+        <option value="Nearby">Nearby</option>
         <option value="Kuala Lumpur">Kuala Lumpur</option>
-        <option value="Penang">Penang</option>
+        <option value="Petaling Jaya">Petaling Jaya</option>
+        <option value="Johor Bahru">Johor Bahru</option>
         <option value="Langkawi">Langkawi</option>
+        <option value="Penang">Penang</option>
+      </select>
+    </label>
+
+    <label>Price:
+      <select id="filterPrice">
+        <option value="">-- Select Price --</option>
+        <option value="Under RM200">Under RM200</option>
+        <option value="Under RM500">Under RM500</option>
+        <option value="Under RM1000">Under RM1000</option>
       </select>
     </label>
 
@@ -53,116 +195,264 @@
       </select>
     </label>
 
-    <!-- Save / Apply / Clear / Show All -->
+    <!-- Filter Actions -->
     <button class="save" onclick="saveFilters()">⭐ Save Current Filters</button>
     <button class="apply" onclick="applyFilters()">📌 Apply Saved Filters</button>
     <button onclick="clearFilters()">🧹 Clear Filters</button>
-    <button onclick="showAllResults()">🔄 Show All</button>
 
-    <!-- Manual Search Button inside Results -->
-    <button onclick="filterResults({
-      price: document.getElementById('filterPrice').value,
-      location: document.getElementById('filterLocation').value,
-      rating: document.getElementById('filterRating').value,
-      keyword: document.getElementById('searchBox').value.trim().toLowerCase()
-    })">🔍 Search</button>
+    <!-- Saved Filters Badge -->
+    <div id="savedFiltersBadge" style="display:none; color:green; font-weight:bold; margin-top:0.5em;"></div>
 
+    <!-- Loading + Counter -->
     <div id="loadingMsg">Loading...</div>
-
-    <!-- Results Counter -->
     <div id="resultsCounter"></div>
 
-    <div id="resultsList" class="hidden">
-      <div class="card">
-        <h3>Cozy Homestay</h3>
-        <p>$120/night • Kuala Lumpur</p>
-        <button onclick="goTo('details')">View Details</button>
-        <button onclick="addToFavorites('Cozy Homestay – $120/night • Kuala Lumpur')">❤️ Add to Favorites</button>
-      </div>
-      <div class="card">
-        <h3>Beachside Villa</h3>
-        <p>$180/night • Penang</p>
-        <button onclick="goTo('details')">View Details</button>
-        <button onclick="addToFavorites('Beachside Villa – $180/night • Penang')">❤️ Add to Favorites</button>
-      </div>
-      <div class="card">
-        <h3>Luxury Resort</h3>
-        <p>$250/night • Langkawi</p>
-        <button onclick="goTo('details')">View Details</button>
-        <button onclick="addToFavorites('Luxury Resort – $250/night • Langkawi')">❤️ Add to Favorites</button>
-      </div>
-    </div>
+    <!-- Results List -->
+    <div id="resultsList" class="hidden"></div>
 
-    <!-- No Results Message -->
+    <!-- No Results -->
     <div id="noResultsMsg" class="hidden">
-      <p>❌ No results found. Try adjusting your filters or search keyword.</p>
+      <p>❌ No results found. Try adjusting your filters.</p>
     </div>
-
-    <button onclick="goTo('home')">Back</button>
   </section>
 
-  <!-- Homestay Details -->
-  <section id="details" class="hidden">
-    <h2>Cozy Homestay</h2>
-    <p>Near city center, WiFi, breakfast included.</p>
-    <button onclick="goTo('booking')">Book Now</button>
-    <button onclick="goTo('results')">Back</button>
-  </section>
+<!-- Detail Sections -->
 
-  <!-- Booking -->
-  <section id="booking" class="hidden">
+<section id="details-flat" class="hidden">
+  <header class="section-header">
+    <button class="backBtn" onclick="goBack()">⬅</button>
+    <h2>Flat in Kuala Lumpur</h2>
+  </header>
+  <h3>Price</h3><p>RM240 for 2 nights</p>
+  <h3>Rating</h3><p>5.0</p>
+  <h3>Facilities</h3>
+  <ul><li>Studio</li><li>Kitchen</li><li>Wifi</li><li>Pool</li><li>TV</li></ul>
+  <h3>Comments</h3><p>“Good to stay. Nice room, nice view. Will come again.” – Nurain</p>
+  <button onclick="reserveHomestay('Flat in Kuala Lumpur','Kuala Lumpur',240)">Reserve</button>
+</section>
+
+<section id="details-klcc" class="hidden">
+  <header class="section-header">
+    <button class="backBtn" onclick="goBack()">⬅</button>
+    <h2>KLCC Luxury Pool View</h2>
+  </header>
+  <h3>Price</h3><p>RM480 for 2 nights</p>
+  <h3>Rating</h3><p>4.9</p>
+  <h3>Facilities</h3>
+  <ul><li>Infinity rooftop pool</li><li>Sauna</li><li>Wifi</li><li>Kitchen</li></ul>
+  <h3>Comments</h3><p>“Exceptional check-in experience, very clean and modern.”</p>
+  <button onclick="reserveHomestay('KLCC Luxury Pool View','Kuala Lumpur',480)">Reserve</button>
+</section>
+
+<section id="details-pj" class="hidden">
+  <header class="section-header">
+    <button class="backBtn" onclick="goBack()">⬅</button>
+    <h2>Home in Petaling Jaya</h2>
+  </header>
+  <h3>Price</h3><p>RM2,376 for 2 nights</p>
+  <h3>Rating</h3><p>4.96</p>
+  <h3>Facilities</h3>
+  <ul><li>Spacious home</li><li>Kitchen</li><li>Wifi</li><li>Sauna</li><li>Smoke alarm</li></ul>
+  <h3>Comments</h3><p>“Excellent stay, very clean and cozy.”</p>
+  <button onclick="reserveHomestay('Home in Petaling Jaya','Petaling Jaya',2376)">Reserve</button>
+</section>
+
+<section id="details-pj2" class="hidden">
+  <header class="section-header">
+    <button class="backBtn" onclick="goBack()">⬅</button>
+    <h2>Petaling Jaya Garden Villa</h2>
+  </header>
+  <h3>Price</h3><p>RM1,200 for 2 nights</p>
+  <h3>Rating</h3><p>4.7</p>
+  <h3>Facilities</h3>
+  <ul><li>Villa</li><li>Private garden</li><li>BBQ area</li><li>Wifi</li><li>Parking</li></ul>
+  <h3>Comments</h3><p>“Great for families, spacious and quiet.”</p>
+  <button onclick="reserveHomestay('Petaling Jaya Garden Villa','Petaling Jaya',1200)">Reserve</button>
+</section>
+
+<section id="details-jb" class="hidden">
+  <header class="section-header">
+    <button class="backBtn" onclick="goBack()">⬅</button>
+    <h2>Place to stay in Johor Bahru</h2>
+  </header>
+  <h3>Price</h3><p>RM180 for 2 nights</p>
+  <h3>Rating</h3><p>5.0</p>
+  <h3>Facilities</h3>
+  <ul><li>Apartment</li><li>Kitchen</li><li>Wifi</li><li>Pool</li><li>TV</li></ul>
+  <h3>Comments</h3><p>“Perfect location, friendly host.”</p>
+  <button onclick="reserveHomestay('Place to stay in Johor Bahru','Johor Bahru',180)">Reserve</button>
+</section>
+
+<section id="details-jb2" class="hidden">
+  <header class="section-header">
+    <button class="backBtn" onclick="goBack()">⬅</button>
+    <h2>Johor Bahru City Apartment</h2>
+  </header>
+  <h3>Price</h3><p>RM546 for 2 nights</p>
+  <h3>Rating</h3><p>4.79</p>
+  <h3>Facilities</h3>
+  <ul><li>Apartment</li><li>Wifi</li><li>Gym</li><li>Pool</li><li>Parking</li></ul>
+  <h3>Comments</h3><p>“Comfortable stay, good facilities.”</p>
+  <button onclick="reserveHomestay('Johor Bahru City Apartment','Johor Bahru',546)">Reserve</button>
+</section>
+
+<section id="details-lk" class="hidden">
+  <header class="section-header">
+    <button class="backBtn" onclick="goBack()">⬅</button>
+    <h2>Luxury Resort in Langkawi</h2>
+  </header>
+  <h3>Price</h3><p>RM250 for 2 nights</p>
+  <h3>Rating</h3><p>4.8</p>
+  <h3>Facilities</h3>
+  <ul><li>Resort</li><li>Beach access</li><li>Pool</li><li>Spa</li><li>Wifi</li></ul>
+  <h3>Comments</h3><p>“Amazing beach view, relaxing spa.”</p>
+  <button onclick="reserveHomestay('Luxury Resort in Langkawi','Langkawi',250)">Reserve</button>
+</section>
+
+<section id="details-lk2" class="hidden">
+  <header class="section-header">
+    <button class="backBtn" onclick="goBack()">⬅</button>
+    <h2>Langkawi Beachside Villa</h2>
+  </header>
+  <h3>Price</h3><p>RM800 for 2 nights</p>
+  <h3>Rating</h3><p>4.95</p>
+  <h3>Facilities</h3>
+  <ul><li>Villa</li><li>Private pool</li><li>Beachfront</li><li>Kitchen</li><li>Wifi</li></ul>
+  <h3>Comments</h3><p>“Perfect for groups, stunning views.”</p>
+  <button onclick="reserveHomestay('Langkawi Beachside Villa','Langkawi',800)">Reserve</button>
+</section>
+
+<section id="details-penang" class="hidden">
+  <header class="section-header">
+    <button class="backBtn" onclick="goBack()">⬅</button>
+    <h2>Beachside Villa in Penang</h2>
+  </header>
+  <h3>Price</h3><p>RM180 for 2 nights</p>
+  <h3>Rating</h3><p>4.85</p>
+  <h3>Facilities</h3>
+  <ul><li>Villa</li><li>Wifi</li><li>Pool</li><li>Kitchen</li><li>Parking</li></ul>
+  <h3>Comments</h3><p>“Lovely beachside stay, very relaxing.”</p>
+  <button onclick="reserveHomestay('Beachside Villa in Penang','Penang',180)">Reserve</button>
+</section>
+
+<section id="details-penang2" class="hidden">
+  <header class="section-header">
+    <button class="backBtn" onclick="goBack()">⬅</button>
+    <h2>Penang Heritage Homestay</h2>
+  </header>
+  <h3>Price</h3><p>RM600 for 2 nights</p>
+  <h3>Rating</h3><p>4.9</p>
+  <h3>Facilities</h3>
+  <ul><li>Heritage house</li><li>Wifi</li><li>Kitchen</li><li>Garden</li><li>Smoke alarm</li></ul>
+  <h3>Comments</h3><p>“Beautiful heritage home, full of character.”</p>
+  <button onclick="reserveHomestay('Penang Heritage Homestay','Penang',600)">Reserve</button>
+</section>
+
+
+<!-- Booking -->
+<section id="booking" class="hidden">
+  <header class="section-header">
+    <button class="backBtn" onclick="goBack()">⬅</button>
     <h2>Booking</h2>
-    <form onsubmit="validateBooking(event)">
-      <label>Check-in Date:<br><input type="date" id="checkin"></label><br>
-      <label>Guests:<br><input type="number" id="guests" min="1"></label><br>
-      <button type="submit">Proceed to Payment</button>
-    </form>
-    <button onclick="goTo('details')">Cancel</button>
-  </section>
+  </header>
+  <form onsubmit="validateBooking(event)">
+    <label>From Date:<br><input type="date" id="fromDate"></label><br>
+    <label>To Date:<br><input type="date" id="toDate"></label><br>
+    <label>Guests:<br><input type="number" id="guests" min="1"></label><br>
+    <button type="submit">Proceed to Payment</button>
+  </form>
+</section>
 
   <!-- Payment -->
   <section id="payment" class="hidden">
     <h2>Payment</h2>
-    <input type="text" placeholder="Card Number">
-    <input type="text" placeholder="Expiry Date">
-    <input type="text" placeholder="CVV">
-    <button onclick="goTo('success')">Pay</button>
-    <button onclick="goTo('error')">Simulate Error</button>
-    <button onclick="goTo('booking')">Back</button>
+    <p id="paymentAmount" style="font-weight:bold; color:blue;"></p> <!-- ✅ Shows total -->
+
+    <form id="paymentForm" onsubmit="validatePayment(event)">
+      <label>Card Number:<br>
+        <input type="text" id="cardNumber" maxlength="16" inputmode="numeric" pattern="[0-9]{16}" required>
+        <small id="cardError" class="error hidden">Card number must be 16 digits.</small>
+      </label><br>
+
+      <label>Expiry Date:<br>
+        <input type="month" id="expiryDate" required>
+        <small id="expiryError" class="error hidden">Please select a valid expiry date.</small>
+      </label><br>
+
+      <label>CVV:<br>
+        <input type="text" id="cvv" maxlength="3" inputmode="numeric" pattern="[0-9]{3}" required>
+        <small id="cvvError" class="error hidden">CVV must be 3 digits.</small>
+      </label><br>
+
+      <button type="submit">Pay</button>
+      <button type="button" onclick="goTo('booking')">Back</button>
+    </form>
+
+    <!-- Error Message -->
+    <div id="paymentError" class="hidden" style="color:red; margin-top:10px;">
+      ❌ Please fix the errors above before proceeding.
+    </div>
+
+    <!-- Success Message -->
+    <div id="paymentSuccess" class="hidden" style="color:green; margin-top:10px; font-weight:bold;">
+      ✅ Payment details valid, processing...
+    </div>
   </section>
 
   <!-- Success -->
   <section id="success" class="hidden">
     <h2>✅ Booking Successful</h2>
-    <button onclick="goTo('confirmation')">View Confirmation</button>
+    <p>Your booking has been saved and added to My Bookings.</p>
   </section>
 
   <!-- Error -->
   <section id="error" class="hidden">
-    <h2>❌ Payment Failed</h2>
+    <header class="section-header">
+      <button class="backBtn" onclick="goBack()">⬅</button>
+      <h2>❌ Payment Failed</h2>
+    </header>
     <p>Please retry.</p>
     <button onclick="goTo('payment')">Retry</button>
   </section>
 
-  <!-- Confirmation -->
-  <section id="confirmation" class="hidden">
-    <h2>Booking Confirmation</h2>
-    <p>Your booking is confirmed.</p>
-    <button onclick="goTo('myBookings')">Go to My Bookings</button>
-  </section>
-
   <!-- My Bookings -->
   <section id="myBookings" class="hidden">
-    <h2>My Bookings</h2>
-    <div class="card">Cozy Homestay – May 2026</div>
-    <button onclick="goTo('home')">Home</button>
+    <header class="section-header">
+      <button class="backBtn" onclick="goBack()">⬅</button>
+      <h2>My Bookings</h2>
+    </header>
+    <div id="myBookingsList"></div>
+    <button id="clearBookingsBtn" onclick="clearAllBookings()" style="display:none;">
+      ❌ Clear All Bookings
+    </button>
   </section>
 
   <!-- Favorites -->
   <section id="favorites" class="hidden">
-    <h2>My Favorites</h2>
+    <header class="section-header">
+      <button class="backBtn" onclick="goBack()">⬅</button>
+      <h2>My Favorites</h2>
+    </header>
     <div id="favoritesList"></div>
-    <button onclick="goTo('home')">Home</button>
+  </section>
+
+  <!-- Messages -->
+  <section id="messages" class="hidden">
+    <header class="section-header">
+      <button class="backBtn" onclick="goBack()">⬅</button>
+      <h2>Messages</h2>
+    </header>
+    <p>No new messages yet.</p>
+  </section>
+
+  <!-- Profile -->
+  <section id="profile" class="hidden">
+    <header class="section-header">
+      <button class="backBtn" onclick="goBack()">⬅</button>
+      <h2>My Profile</h2>
+    </header>
+    <p>Name: User</p>
+    <p>Email: user@example.com</p>
   </section>
 </main>
 
@@ -171,6 +461,8 @@
   <button onclick="goTo('home')">🏠 Home</button>
   <button onclick="goTo('myBookings')">📖 My Bookings</button>
   <button onclick="goTo('favorites')">❤️ Favorites</button>
+  <button onclick="goTo('messages')">💬 Messages</button>
+  <button onclick="goTo('profile')">👤 Profile</button>
 </nav>
 
 <script src="script.js"></script>
